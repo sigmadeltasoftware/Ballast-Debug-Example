@@ -28,6 +28,7 @@ kotlin {
     }
     
     sourceSets {
+        val ballastVersion = "4.1.0"
         
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
@@ -40,6 +41,15 @@ kotlin {
             implementation(compose.ui)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
+
+            implementation("io.github.copper-leaf:ballast-core:$ballastVersion")
+            implementation("io.github.copper-leaf:ballast-saved-state:$ballastVersion")
+            implementation("io.github.copper-leaf:ballast-repository:$ballastVersion")
+            implementation("io.github.copper-leaf:ballast-firebase-crashlytics:$ballastVersion")
+            implementation("io.github.copper-leaf:ballast-firebase-analytics:$ballastVersion")
+            implementation("io.github.copper-leaf:ballast-debugger-client:$ballastVersion")
+            implementation("io.github.copper-leaf:ballast-navigation:$ballastVersion")
+            implementation("io.github.copper-leaf:ballast-schedules:$ballastVersion")
         }
     }
 }
